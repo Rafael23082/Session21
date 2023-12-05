@@ -16,10 +16,10 @@ def createlist():
     
     return lists
 
-def resultRA(listOfFood):
+def resultRA(lists):
     print("Here's a summary of the items purchased:")
     print("---------------------------")
-    for food in listOfFood:
+    for food in lists:
         print(f"Item: {food.foodName}")
         print(f"Amount ordered: {food.amountOfFood} lbs")
         standardPrice = "{:.2f}".format(food.standardPrice)
@@ -28,16 +28,16 @@ def resultRA(listOfFood):
         print(f"Price of order: ${calculatedPrice}")
         print(" ")    
 
-def totalCostCalculatorRA(listOfFood):
+def totalCostCalculatorRA(lists):
     totalPrice = 0
-    for foodData in listOfFood:
+    for foodData in lists:
         totalPrice += foodData.calculatedPrice
         totalPriceRounded = "{:.2f}".format(totalPrice)
     print(f"Total cost: ${totalPriceRounded}")
 
 def startRA():
-    listOfFood = createlist()
-    resultRA(listOfFood)
-    totalCostCalculatorRA(listOfFood)
+    lists = createlist()
+    resultRA(lists)
+    totalCostCalculatorRA(lists)
 
 startRA()
